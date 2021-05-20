@@ -33,8 +33,9 @@
     el llamado a este metodo cuando sea necesario.
 </p>
 
-<pre>
-    para validar formularios que utilizan el metodo POST<br>
+<p>
+    para validar formularios que 
+    utilizan el metodo POST
     debe utilizar el helper 
     <pre>
     validar_form()
