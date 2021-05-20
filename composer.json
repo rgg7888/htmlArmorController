@@ -1,0 +1,21 @@
+{
+    "name": "ramiro/html-armor-controller",
+    "description": "Paquete para recibir y enviar datos desde la vista a la base de datos y viceversa",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "rgg7888",
+            "email": "rgg7888@outlook.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "phpunit/phpunit": "9.5.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\data\\controller\\": "src/controller/"
+        },
+        "files": ["src/helpers.php"]
+    }
+}
