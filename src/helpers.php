@@ -14,3 +14,12 @@ if(!function_exists('validar_form')) {
         }
     }
 }
+
+if(!function_exists('_validar_form')) {
+    function _validar_form(array $names, $buttonName = 'submit') {
+        $objeto = new App\data\controller\DataController;
+        if($objeto->_submited($buttonName)) {
+            return $objeto->_vacio($names);
+        }
+    }
+}
