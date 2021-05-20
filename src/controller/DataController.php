@@ -10,6 +10,30 @@ class DataController {
         return \htmlspecialchars($data);
     }
 
+    public function validEmail($email) {
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return "not valid";
+        }else{
+            return $email;
+        }
+    }
+
+    public function validList($list) {
+        if(!\preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/',$list)) {
+            return "not valid";
+        }else{
+            return $list;
+        }
+    }
+
+    public function letrasOnly($string) {
+        if(!\preg_match('/^[a-zA-Z\s]+$/',$string)) {
+            return "not valid";
+        }else{
+            return $string;
+        }
+    }
+
     public function submited (string $buttonName) {
         if(isset($_POST[$buttonName])) {
             return true;
@@ -25,7 +49,25 @@ class DataController {
             if(empty($_POST[$names[$i]])) {
                 array_push($errors,$names[$i].' required');
             }else{
-                array_push($values,self::prevenirXSSAttacks($_POST[$names[$i]]));
+                if($names[$i] === 'email') {
+                    if($this->validEmail(self::prevenirXSSAttacks($_POST[$names[$i]])) === 'not valid') {
+                        array_push($errors,$this->validEmail(self::prevenirXSSAttacks($_POST[$names[$i]])));
+                    }else{
+                        array_push($values,$this->validEmail(self::prevenirXSSAttacks($_POST[$names[$i]])));
+                    }
+                }else if($names[$i] === 'ingredients' || $names[$i] === 'list' || $names[$i] === 'lista') {
+                    if($this->validEmail(self::prevenirXSSAttacks($_POST[$names[$i]])) === 'not valid') {
+                        array_push($errors,$this->validList(self::prevenirXSSAttacks($_POST[$names[$i]])));
+                    }else{
+                        array_push($values,$this->validList(self::prevenirXSSAttacks($_POST[$names[$i]])));
+                    }
+                }else{
+                    if($this->validEmail(self::prevenirXSSAttacks($_POST[$names[$i]])) === 'not valid') {
+                        array_push($errors,$this->letrasOnly(self::prevenirXSSAttacks($_POST[$names[$i]])));
+                    }else{
+                        array_push($values,$this->letrasOnly(self::prevenirXSSAttacks($_POST[$names[$i]])));
+                    }
+                }
             }
         }
         if(empty($errors)) {
@@ -50,7 +92,25 @@ class DataController {
             if(empty($_GET[$names[$i]])) {
                 array_push($errors,$names[$i].' required');
             }else{
-                array_push($values,self::prevenirXSSAttacks($_GET[$names[$i]]));
+                if($names[$i] === 'email') {
+                    if($this->validEmail(self::prevenirXSSAttacks($_GET[$names[$i]])) === 'not valid') {
+                        array_push($errors,$this->validEmail(self::prevenirXSSAttacks($_GET[$names[$i]])));
+                    }else{
+                        array_push($values,$this->validEmail(self::prevenirXSSAttacks($_GET[$names[$i]])));
+                    }
+                }else if($names[$i] === 'ingredients' || $names[$i] === 'list' || $names[$i] === 'lista') {
+                    if($this->validEmail(self::prevenirXSSAttacks($_GET[$names[$i]])) === 'not valid') {
+                        array_push($errors,$this->validList(self::prevenirXSSAttacks($_GET[$names[$i]])));
+                    }else{
+                        array_push($values,$this->validList(self::prevenirXSSAttacks($_GET[$names[$i]])));
+                    }
+                }else{
+                    if($this->validEmail(self::prevenirXSSAttacks($_GET[$names[$i]])) === 'not valid') {
+                        array_push($errors,$this->letrasOnly(self::prevenirXSSAttacks($_GET[$names[$i]])));
+                    }else{
+                        array_push($values,$this->letrasOnly(self::prevenirXSSAttacks($_GET[$names[$i]])));
+                    }
+                }
             }
         }
         if(empty($errors)) {
