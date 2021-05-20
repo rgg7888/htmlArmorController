@@ -73,7 +73,7 @@ class DataController {
         if(empty($errors)) {
             return $values;
         }else{
-            return $errors;
+            return [$errors,$values];
         }
     }
 
@@ -116,7 +116,33 @@ class DataController {
         if(empty($errors)) {
             return $values;
         }else{
-            return $errors;
+            return [$errors,$values];
+        }
+    }
+
+    public function recorrerResult (array $result, $imprimir = false) {
+        $values = [];
+        if($imprimir){
+            for($i = 0; $i < count($result); $i++) {
+                if(is_array($result[$i])) {
+                    for($j = 0; $j < count($result[$i]); $j++) {
+                        echo $result[$i][$j] . "<br>";
+                    }
+                }else{
+                    echo $result[$i] . "<br>";
+                }
+            }
+        }else{
+            for($i = 0; $i < count($result); $i++) {
+                if(is_array($result[$i])) {
+                    for($j = 0; $j < count($result[$i]); $j++) {
+                        array_push($values,$result[$i][$j]);
+                    }
+                }else{
+                    array_push($values,$result[$i]);
+                }
+            }
+            return $values;
         }
     }
 
