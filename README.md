@@ -25,3 +25,25 @@
     y de esta forma evitamos la inyeccion de
     codigo malicioso.
 </p>
+
+<p>
+    notXSS probablemente no sea necesario
+    que lo utilize directamente, ya que 
+    las siguientes funciones hacen 
+    el llamado a este metodo cuando sea necesario.
+</p>
+
+<p>
+    para validar formularios que utilizan el metodo POST<br>
+    debe utilizar el helper validar_form()<br>
+    simplemente pasele un arreglo con los nombres de los
+    campos y la funcion hara el resto.
+</p>
+
+<p>
+    Para validar con GET utilize _validar_form()
+    y el funcionaiento es igual solo agreguele 
+    mediante un arreglo los nombres de todos los
+    datos que esta capturando con el formulario
+    y que sea necesario un tipo de validacion
+</p>
