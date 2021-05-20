@@ -22,6 +22,6 @@
     </pre>
     este metodo nos ayuda a convertir 
     las etiquetas html en entidades html
-    y de esta forma evitamos ls inyeccion de
+    y de esta forma evitamos la inyeccion de
     codigo malicioso.
 </p>
