@@ -1,1 +1,1 @@
-{"version":1,"defects":{"DataControllerTest::test_xss":3},"times":{"DataControllerTest::test_xss":0.002}}
+{"version":1,"defects":{"DataControllerTest::test_xss":3,"DataControllerTest::test_validar_campos_vacios":3},"times":{"DataControllerTest::test_xss":0.003,"DataControllerTest::test_validar_campos_vacios":0,"DataControllerTest::test_campos_no_vacios":0}}
