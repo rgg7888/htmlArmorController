@@ -33,15 +33,21 @@
     el llamado a este metodo cuando sea necesario.
 </p>
 
-<p>
+<pre>
     para validar formularios que utilizan el metodo POST<br>
-    debe utilizar el helper validar_form()<br>
+    debe utilizar el helper 
+    <pre>
+    validar_form()
+    </pre>
     simplemente pasele un arreglo con los nombres de los
     campos y la funcion hara el resto.
 </p>
 
 <p>
-    Para validar con GET utilize _validar_form()
+    Para validar con GET utilize 
+    <pre>
+    _validar_form()
+    </pre>
     y el funcionaiento es igual solo agreguele 
     mediante un arreglo los nombres de todos los
     datos que esta capturando con el formulario
