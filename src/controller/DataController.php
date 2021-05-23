@@ -170,13 +170,15 @@ class DataController {
         $invertido = [];
         if(\strpos($valores[0],"required")) {
             $invertido = $this->itera($valores);
-        }else if(\strpos($valores[0],"not")){
+        }/*else if(\strpos($valores[0],"not")){
             $invertido = $this->itera($valores);
+        }*/else{
+            var_dump($valores);
         }
-        $aux = $invertido[1];
+        /*$aux = $invertido[1];
         $invertido[1] = $invertido[2];
         $invertido[2] = $aux;
-        return $invertido;
+        return $invertido;*/
     }
 
 }
