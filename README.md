@@ -4,6 +4,17 @@
 
 <pre>
 <h3>This bug is already patched</h3>
+<b>
+<pre>
+Pero tambien tome en cuenta que esta es una validacion
+muy muy basica y especifica, asi que para que funcione
+debe de tener un formulario con tres inputs y en el orden
+que se indica :
+1- debe ser email
+2- debe ser un input que admita solo letras
+3- debe ser un input que espera una lista
+</pre>
+</b>
 Por el momento no utilice las funciones validar_form y _validar_form
 directamente ya que estas tienen un problema logico al obtener los 
 datos validados, puede utilizar las funciones de validacion independientemente
