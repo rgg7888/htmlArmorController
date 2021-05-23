@@ -76,3 +76,10 @@ if(!function_exists('insert')) {
         return $helloWorld->insert($data,$tabla,$conn,$goTo);
     }
 }
+
+if(!function_exists('delete')) {
+    function delete($conn,string $name,string $tabla) {
+        $helloWorld = new App\clad\crud\Clad;
+        $helloWorld->delete($conn,$name,$tabla);
+    }
+}

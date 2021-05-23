@@ -152,4 +152,19 @@ class Clad {
         }
     }
 
+    public function delete($conn,string $name,string $tabla) {
+        $id_to_delete = \mysqli_real_escape_string($conn,$_POST[$name]);
+        $objeto = new Valida;
+        if($objeto->letrasOnlyNotSpaces($tabla)) {
+            $sql = "DELETE FROM $tabla WHERE id = $id_to_delete";
+            if(mysqli_query($conn,$sql)){
+                header('Location: http://localhost:8000');
+            }else{
+                die('query error '. \mysqli_error());
+            }
+        }else{
+            die("errror al crear el query");
+        }
+    }
+
 }
