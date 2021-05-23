@@ -126,6 +126,7 @@ class Clad {
             }
         }
         $sql .= ");";
+        var_dump($sql);
         if(mysqli_query($conn,$sql)) {
             header('Location: '.$goTo);
         }else{
