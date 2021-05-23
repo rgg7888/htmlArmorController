@@ -133,16 +133,4 @@ class ValidaTest extends TestCase {
 
     }
 
-    public function test_comprobar_recibo_error(){
-
-        $input = new Valida;
-
-        $_POST['email'] = '';
-
-        $this->assertEquals(false, $input->comprobar($input->validar("vacio","email")));
-
-        $this->assertEquals(false, $input->comprobar($input->validar("correo","email")));
-
-    }
-
 }
