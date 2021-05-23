@@ -30,6 +30,14 @@ class Valida {
         }
     }
 
+    public function letrasOnlyNotSpaces($string) {
+        if(!\preg_match('/^[a-zA-Z]+$/',$string)) {
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     public function vacio($campo) {
         if(empty($campo)) {
             return false;

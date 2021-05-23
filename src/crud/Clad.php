@@ -2,6 +2,8 @@
 
 namespace App\clad\crud;
 
+use App\validacion\forms\Valida;
+
 class Clad {
 
     private array $data = [
@@ -65,6 +67,27 @@ class Clad {
 
     public function getDbName() {
         return $this->data['dbname'];
+    }
+
+    //crud operations
+    public function select(string $campos,string $tabla,$conn) {
+        $objeto = new Valida;
+        #primero valido que sea una lista de campos valida
+        if($objeto->lista($campos)) {
+            #valido que el nombre sea un string correcto
+            if($objeto->letrasOnlyNotSpaces($tabla)) {
+                $sql = "SELECT $campos FROM $tabla";
+                $registros = \mysqli_query($conn,$sql);
+                $rows = \mysqli_fetch_all($registros);
+                \mysqli_free_result($registros);
+                \mysqli_close($conn);
+                return $rows;
+            }else{
+                die("error al crear el query");
+            }
+        }else{
+            die("error al crear el query");
+        }
     }
 
 }
