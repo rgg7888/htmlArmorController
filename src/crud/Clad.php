@@ -119,7 +119,11 @@ class Clad {
         }
         $sql .= " VALUES(";
         for($i = 0; $i < count($saveData); $i++) {
-            $sql .= "'".$saveData[$i]."',";
+            if($i === count($saveData) -1) {
+                $sql .= "'".$saveData[$i];
+            }else{
+                $sql .= "'".$saveData[$i]."',";
+            }
         }
         $sql .= ");";
         if(mysqli_query($conn,$sql)) {
