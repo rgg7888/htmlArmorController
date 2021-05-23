@@ -120,7 +120,7 @@ class Clad {
         $sql .= " VALUES(";
         for($i = 0; $i < count($saveData); $i++) {
             if($i === count($saveData) -1) {
-                $sql .= "'".$saveData[$i];
+                $sql .= "'".$saveData[$i]."'";
             }else{
                 $sql .= "'".$saveData[$i]."',";
             }
