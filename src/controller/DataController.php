@@ -158,8 +158,25 @@ class DataController {
         }
     }
 
+    public function itera($array) {
+        $invertido = [];
+        for($i = count($array); $i > 0; $i--){
+            array_push($invertido,$array[$i-1]);
+        }
+        return $invertido;
+    }
+
     public function OrdenamientoEspecial (array $valores) {
-        var_dump($valores);
+        $invertido = [];
+        if(\strpos($valores[0],"required")) {
+            $invertido = $this->itera($valores);
+        }else if(\strpos($valores[0],"not")){
+            $invertido = $this->itera($valores);
+        }
+        $aux = $invertido[1];
+        $invertido[1] = $invertido[2];
+        $invertido[2] = $aux;
+        return $invertido;
     }
 
 }
