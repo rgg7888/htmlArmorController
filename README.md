@@ -1,5 +1,7 @@
 # htmlArmorController
 
+<h2>Ir a lo nuevo y omitir lo obsolete <a href="#validar">para Evitar conflictos en sus proyectos click me</a></h2>
+
 <h1>Bugs Temporales</h1>
 
 <pre>
@@ -88,3 +90,69 @@ formularios este lista !!
     datos que esta capturando con el formulario
     y que sea necesario un tipo de validacion
 </p>
+
+<h2 id="validar">Funcion validar()</h2>
+
+<pre>
+hola bienvenido/a a el htmlArmorController
+iniciamos con un methodo super poderoso
+el cual te permitira validar tus inputs
+de una manera facil y elegante.
+
+lo unico que tiene que hacer es utilizar
+el method validar(), este metodo recibe 
+3 atributos "tipo,name,method"
+
+el primero define el tipo de validacion
+que  quiera realizar , por el momento
+contamos con cuatro tipos de validaciones
+</pre>
+
+<h3>Tipos de Validaciones</h3>
+<ol>
+    <li>vacio</li>
+    <li>correo</li>
+    <li>lista</li>
+    <li>letrasOnly</li>
+</ol>
+
+<p>
+creo que los nombres son bastante
+descriptivos para entender lo que 
+hace cada validacion.
+</p>
+
+<p>
+Supongamos que quiere validar que 
+un campo obligatorio no este vacio
+para despues proceder con su evaluacion<br>
+
+el metodo validar obtendra directamente
+el valor de la variable $_POST o $_GET
+segun se le indique, por eso es requerido
+el argumento name.
+</p>
+
+<pre>
+entonces para validar que un campo
+no esta vacio enviado por el method post
+se hace de esta manera :
+
+validar("vacio","myInput");
+
+donde myInput es el valor del atributo name de tu input
+
+en caso que el campo este vacio 
+obtendra como resultado "myInput es Obligatorio"
+
+de lo contrario recibira el valor que se 
+haya ingresado en el campo.
+
+para hacer la misma validacion pero 
+por el metodo get solamente agregue
+true como tercer argumento asi :
+
+validar("vacio","myInput",true);
+
+ESTA MISMA FORMA APLICA PARA TODAS LAS VALIDACIONES DISPONIBLES
+</pre>
