@@ -116,7 +116,7 @@ class DataController {
         if(empty($errors)) {
             return $values;
         }else{
-            return [$errors,$values];
+            return [$errors];
         }
     }
 
