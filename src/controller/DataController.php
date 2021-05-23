@@ -146,4 +146,16 @@ class DataController {
         }
     }
 
+    public static function showOrNotErrors ($inputName,$text) {
+        if($text === $inputName." required" || $text === "not valid") {
+            return $text;
+        }
+    }
+
+    public static function showOrNotValues ($inputName,$text) {
+        if($text !== $inputName." required" || $text !== "not valid") {
+            return $text;
+        }
+    }
+
 }

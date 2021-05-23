@@ -6,6 +6,18 @@ if(!function_exists('notXSS')) {
     }
 }
 
+if(!function_exists('err')) {
+    function err($inputName,$output) {
+        return App\data\controller\DataController::showOrNotErrors($inputName,$output);
+    }
+}
+
+if(!function_exists('val')) {
+    function val($inputName,$output) {
+        return App\data\controller\DataController::showOrNotValues($inputName,$output);
+    }
+}
+
 if(!function_exists('validar_form')) {
     function validar_form(array $names, $buttonName = 'submit', $imprimir = false) {
         $objeto = new App\data\controller\DataController;
