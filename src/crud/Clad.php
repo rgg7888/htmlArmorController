@@ -76,13 +76,22 @@ class Clad {
     }
 
     //crud operations
-    public function select(string $campos,string $tabla,$conn) {
+    public function select(string $campos,string $tabla,$conn,array $ordenamiento = [
+        "orderBy" => "none"
+    ]) {
         $objeto = new Valida;
         #primero valido que sea una lista de campos valida
         if($objeto->lista($campos)) {
             #valido que el nombre sea un string correcto
             if($objeto->letrasOnlyNotSpaces($tabla)) {
-                $sql = "SELECT $campos FROM $tabla";
+                #valido si el usuario quiere un ordenamiento 
+                $chunk = '';
+                if($ordenamiento['orderBy'] !== "none") {
+                    $chunk = " ORDER BY ".$ordenamiento['orderBy'];
+                    $sql = "SELECT $campos FROM $tabla $chunk";
+                }else{
+                    $sql = "SELECT $campos FROM $tabla";
+                }
                 $registros = \mysqli_query($conn,$sql);
                 $rows = \mysqli_fetch_all($registros,MYSQLI_ASSOC);
                 \mysqli_free_result($registros);
