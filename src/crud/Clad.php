@@ -84,7 +84,7 @@ class Clad {
             if($objeto->letrasOnlyNotSpaces($tabla)) {
                 $sql = "SELECT $campos FROM $tabla";
                 $registros = \mysqli_query($conn,$sql);
-                $rows = \mysqli_fetch_all($registros);
+                $rows = \mysqli_fetch_all($registros,MYSQLI_ASSOC);
                 \mysqli_free_result($registros);
                 \mysqli_close($conn);
                 return $rows;
