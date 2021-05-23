@@ -116,7 +116,7 @@ class Clad {
         }
         for($i = 0; $i < count($campos); $i++) {
             if($i === count($campos) -1) {
-                $sql .= $campos[$i];
+                $sql .= $campos[$i].')';
             }else{
                 $sql .= $campos[$i].",";
             }
@@ -130,7 +130,6 @@ class Clad {
             }
         }
         $sql .= ");";
-        var_dump($sql);
         if(mysqli_query($conn,$sql)) {
             header('Location: '.$goTo);
         }else{
