@@ -105,4 +105,15 @@ class Valida {
         }
     }
 
+    public function comprobar(string $result) {
+        if(
+            $result === "Correo Invalido" ||
+            $result === "Formato Incorrecto" ||
+            $result === "Solo se permiten letras y espacios" ||
+            strpos($result,"es Obligatorio")
+        ){
+            return false;
+        }
+    }
+
 }
