@@ -1,5 +1,20 @@
 # htmlArmorController
 
+<h1>Bugs Temporales</h1>
+
+<pre>
+Por el momento no utilice las funciones validar_form y _validar_form
+directamente ya que estas tienen un problema logico al obtener los 
+datos validados, puede utilizar las funciones de validacion independientemente
+para validar , email, solo letras o listas divididas por coma
+
+en la clase DataController tiene las funciones para realizar
+dichas acciones puede instanciar la clase y utilizar sus 
+metodos de validacion sin problema pero recuerde no utilizar 
+los helpers aun , excepto el helper notXSS() este helper si 
+puede utilizarlo sin problema.
+</pre>
+
 <h2>Controlador de datos</h2>
 
 <p>
