@@ -132,7 +132,7 @@ class DataController {
                     echo $result[$i] . "<br>";
                 }
             }
-        }else{
+        }else{/*
             for($i = 0; $i < count($result); $i++) {
                 if(is_array($result[$i])) {
                     for($j = 0; $j < count($result[$i]); $j++) {
@@ -141,8 +141,8 @@ class DataController {
                 }else{
                     array_push($values,$result[$i]);
                 }
-            }
-            var_dump($values) ;
+            }*/
+            var_dump(array_merge($$result[0],$result[1])) ;
         }
     }
 
