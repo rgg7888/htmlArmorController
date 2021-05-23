@@ -14,7 +14,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\data\\controller\\": "src/controller/"
+            "App\\data\\controller\\": "src/controller/",
+            "App\\validacion\\forms\\": "src/forms/"
         },
         "files": ["src/helpers.php"]
     }

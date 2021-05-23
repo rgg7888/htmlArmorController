@@ -7,10 +7,12 @@ class DataController {
     public function __construct(){}
 
     public static function prevenirXSSAttacks ($data) {
+        trigger_error("Esta funcion y la clase ala que pertenece desaparecera pronto , no la utilice please", E_USER_NOTICE);
         return \htmlspecialchars($data);
     }
 
     public function validEmail($email) {
+        trigger_error("Esta funcion y la clase ala que pertenece desaparecera pronto , no la utilice please", E_USER_NOTICE);
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return "not valid";
         }else{
@@ -19,6 +21,7 @@ class DataController {
     }
 
     public function validList($list) {
+        trigger_error("Esta funcion y la clase ala que pertenece desaparecera pronto , no la utilice please", E_USER_NOTICE);
         if(!\preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/',$list)) {
             return "not valid";
         }else{
@@ -27,6 +30,7 @@ class DataController {
     }
 
     public function letrasOnly($string) {
+        trigger_error("Esta funcion y la clase ala que pertenece desaparecera pronto , no la utilice please", E_USER_NOTICE);
         if(!\preg_match('/^[a-zA-Z\s]+$/',$string)) {
             return "not valid";
         }else{
@@ -35,6 +39,7 @@ class DataController {
     }
 
     public function submited (string $buttonName) {
+        trigger_error("Esta funcion y la clase ala que pertenece desaparecera pronto , no la utilice please", E_USER_NOTICE);
         if(isset($_POST[$buttonName])) {
             return true;
         }else{
@@ -43,6 +48,7 @@ class DataController {
     }
 
     public function vacio(array $names) {
+        trigger_error("Esta funcion y la clase ala que pertenece desaparecera pronto , no la utilice please", E_USER_NOTICE);
         $errors = [];
         $values = [];
         for($i = 0; $i < count($names); $i++){
@@ -78,6 +84,7 @@ class DataController {
     }
 
     public function _submited (string $buttonName) {
+        trigger_error("Esta funcion y la clase ala que pertenece desaparecera pronto , no la utilice please", E_USER_NOTICE);
         if(isset($_GET[$buttonName])) {
             return true;
         }else{
@@ -86,6 +93,7 @@ class DataController {
     }
 
     public function _vacio(array $names) {
+        trigger_error("Esta funcion y la clase ala que pertenece desaparecera pronto , no la utilice please", E_USER_NOTICE);
         $errors = [];
         $values = [];
         for($i = 0; $i < count($names); $i++){
@@ -121,6 +129,7 @@ class DataController {
     }
 
     public function recorrerResult (array $result, $imprimir = false) {
+        trigger_error("Esta funcion y la clase ala que pertenece desaparecera pronto , no la utilice please", E_USER_NOTICE);
         $values = [];
         if($imprimir){
             for($i = 0; $i < count($result); $i++) {
@@ -147,18 +156,21 @@ class DataController {
     }
 
     public static function showOrNotErrors ($inputName,$text) {
+        trigger_error("Esta funcion y la clase ala que pertenece desaparecera pronto , no la utilice please", E_USER_NOTICE);
         if($text === $inputName." required" || $text === "not valid") {
             return $text;
         }
     }
 
     public static function showOrNotValues ($inputName,$text) {
+        trigger_error("Esta funcion y la clase ala que pertenece desaparecera pronto , no la utilice please", E_USER_NOTICE);
         if($text !== $inputName." required" && $text !== "not valid") {
             return $text;
         }
     }
 
     public function itera($array) {
+        trigger_error("Esta funcion y la clase ala que pertenece desaparecera pronto , no la utilice please", E_USER_NOTICE);
         $invertido = [];
         for($i = count($array); $i > 0; $i--){
             array_push($invertido,$array[$i-1]);
@@ -167,6 +179,7 @@ class DataController {
     }
 
     public function OrdenamientoEspecial (array $valores) {
+        trigger_error("Esta funcion y la clase ala que pertenece desaparecera pronto , no la utilice please", E_USER_NOTICE);
         $invertido = [];
         if(filter_var($valores[2], FILTER_VALIDATE_EMAIL)) {
             $invertido = $this->itera($valores);
