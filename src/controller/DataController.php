@@ -153,7 +153,7 @@ class DataController {
     }
 
     public static function showOrNotValues ($inputName,$text) {
-        if($text !== $inputName." required" || $text !== "not valid") {
+        if($text !== $inputName." required" && $text !== "not valid") {
             return $text;
         }
     }
