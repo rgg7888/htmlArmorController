@@ -107,7 +107,7 @@ class Clad {
     }
 
     public function insert(array $data,string $tabla,$conn,string $goTo) {
-        $sql = 'INSERT INTO '.$tabla.'(';
+        $sql = "INSERT INTO $tabla(";
         $saveData = [];
         $campos = [];
         foreach($data as $key => $value) {
