@@ -159,16 +159,7 @@ class DataController {
     }
 
     public function OrdenamientoEspecial (array $valores) {
-        $invertido = [];
-        if(\strpos($valores[0],"required") || \strpos($valores[0],"not")) {
-            for($i = count($valores); $i > 0; $i--){
-                array_push($invertido,$valores[$i-1]);
-            }
-        }
-        $aux = $invertido[1];
-        $invertido[1] = $invertido[2];
-        $invertido[2] = $aux;
-        return $invertido;
+        var_dump($valores);
     }
 
 }
