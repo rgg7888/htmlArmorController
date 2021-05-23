@@ -21,7 +21,7 @@ class Clad {
     }
 
     public function connect() {
-        $conn = \mysqli_connect($this->getHost(),$this->getUser(),$this->getPassword(),$this->geetDbName());
+        $conn = \mysqli_connect($this->getHost(),$this->getUser(),$this->getPassword(),$this->getDbName());
         $this->setConn($conn);
     }
 
