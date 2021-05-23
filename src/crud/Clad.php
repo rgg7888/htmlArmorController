@@ -90,8 +90,10 @@ class Clad {
                 if($ordenamiento['orderBy'] !== "none") {
                     $chunk = " ORDER BY ".$ordenamiento['orderBy']." ".$ordenamiento['forma'];
                     $sql = "SELECT $campos FROM $tabla".$chunk;
+                    echo "entro al ordenamiento";
                 }else{
                     $sql = "SELECT $campos FROM $tabla";
+                    echo "no entro al ordenamiento";
                 }
                 $registros = \mysqli_query($conn,$sql);
                 $rows = \mysqli_fetch_all($registros,MYSQLI_ASSOC);
