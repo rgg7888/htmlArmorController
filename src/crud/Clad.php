@@ -76,15 +76,20 @@ class Clad {
     }
 
     //crud operations
-    public function select(string $campos,string $tabla,$conn,$Desc) {
+    public function select(string $campos,string $tabla,$conn,array $order = [
+        'by' => 'none',
+        'forma' => 'ASC'
+    ]) {
         $objeto = new Valida;
         #primero valido que sea una lista de campos valida
         if($objeto->lista($campos)) {
             #valido que el nombre sea un string correcto
             if($objeto->letrasOnlyNotSpaces($tabla)) {
                 #valido si el usuario quiere un ordenamiento 
-                if($Desc) {
-                    $sql = "SELECT $campos FROM $tabla ORDER BY created_at DESC";
+                if($order['by'] !== 'none') {
+                    $campo = $order['by'];
+                    $forma = $order['forma'];
+                    $sql = "SELECT $campos FROM $tabla ORDER BY $campo $forma";
                     echo "entro al ordenamiento";
                 }else{
                     $sql = "SELECT $campos FROM $tabla";

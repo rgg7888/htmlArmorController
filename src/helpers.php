@@ -54,8 +54,11 @@ if(!function_exists('conectar')) {
 }
 
 if(!function_exists('select')) {
-    function select(string $campos,string $tabla,$conn) {
+    function select(string $campos,string $tabla,$conn,array $order = [
+        'by' => 'none',
+        'forma' => 'ASC'
+    ]) {
         $helloWorld = new App\clad\crud\Clad;
-        return $helloWorld->select($campos,$tabla,$conn);
+        return $helloWorld->select($campos,$tabla,$conn,$order);
     }
 }
