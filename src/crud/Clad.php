@@ -106,6 +106,21 @@ class Clad {
         }
     }
 
+    public function byId($conn,string $tabla) {
+        $objeto = new Valida;
+        $ID = \mysqli_real_escape_string($conn,$_GET['id']);
+        if($objeto->letrasOnlyNotSpaces($tabla)) {
+            $sql = "SELECT * FROM $tabla WHERE id = $ID";
+        }else{
+            die("error al crear el query");
+        }
+        $result = mysqli_query($conn,$sql);
+        $row = \mysqli_fetch_assoc($result);
+        \mysqli_free_result($result);
+        \mysqli_close($conn);
+        return $row;
+    }
+
     public function insert(array $data,string $tabla,$conn,string $goTo) {
         $sql = "INSERT INTO $tabla(";
         $saveData = [];

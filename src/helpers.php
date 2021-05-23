@@ -63,6 +63,13 @@ if(!function_exists('select')) {
     }
 }
 
+if(!function_exists('byId')) {
+    function byId ($conn,string $tabla) {
+        $helloWorld = new App\clad\crud\Clad;
+        return $helloWorld->byId($conn,$tabla);
+    }
+}
+
 if(!function_exists('insert')) {
     function insert(array $data,string $tabla,$conn,string $goTo) {
         $helloWorld = new App\clad\crud\Clad;
