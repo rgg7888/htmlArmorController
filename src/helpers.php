@@ -62,3 +62,10 @@ if(!function_exists('select')) {
         return $helloWorld->select($campos,$tabla,$conn,$order);
     }
 }
+
+if(!function_exists('insert')) {
+    function insert(array $data,string $tabla,$conn,string $goTo) {
+        $helloWorld = new App\clad\crud\Clad;
+        return $helloWorld->insert($data,$tabla,$conn,$goTo);
+    }
+}

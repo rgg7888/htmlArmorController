@@ -106,4 +106,27 @@ class Clad {
         }
     }
 
+    public function insert(array $data,string $tabla,$conn,string $goTo) {
+        $sql = 'INSERT INTO '.$tabla.'(';
+        $saveData = [];
+        $campos = [];
+        foreach($data as $key => $value) {
+            array_push($saveData,\mysqli_real_escape_string($conn,$value));
+            array_push($campos,$key);
+        }
+        for($i = 0; $i < count($campos); $i++) {
+            $sql .= $campos[$i];
+        }
+        $sql .= " VALUES(";
+        for($i = 0; $i < count($saveData); $i++) {
+            $sql .= "'".$saveData[$i]."',";
+        }
+        $sql .= ");";
+        if(mysqli_query($conn,$sql)) {
+            header('Location: '.$goTo);
+        }else{
+            die("error al guardar " . \mysqli_error($conn));
+        }
+    }
+
 }
