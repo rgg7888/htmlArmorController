@@ -45,3 +45,10 @@ if(!function_exists('validar')) {
         return $helloWorld->validar($tipo,$name,$getMethod);
     }
 }
+
+if(!function_exists('conectar')) {
+    function conectar(array $data) {
+        $helloWorld = new App\clad\crud\Clad($data);
+        return $helloWorld->getConn();
+    }
+}

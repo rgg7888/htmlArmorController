@@ -17,7 +17,7 @@ class Clad {
     }
 
     public function getConn() {
-        return $this->conn;
+        return $this->data['conexion'];
     }
 
     public function connect() {
