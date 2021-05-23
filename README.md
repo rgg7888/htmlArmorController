@@ -3,6 +3,7 @@
 <h1>Bugs Temporales</h1>
 
 <pre>
+<h3>This bug is already patched</h3>
 Por el momento no utilice las funciones validar_form y _validar_form
 directamente ya que estas tienen un problema logico al obtener los 
 datos validados, puede utilizar las funciones de validacion independientemente
@@ -14,7 +15,14 @@ metodos de validacion sin problema pero recuerde no utilizar
 los helpers aun , excepto el helper notXSS() este helper si 
 puede utilizarlo sin problema.
 </pre>
-
+<p>
+El bug anterior y esta parchado pero aun no 
+se implementa una funcion que sea util para formularios 
+con mas de 3 inputs de entrada , despues de este parrafo
+estare notificando cuando la funcion para validar 
+formularios este lista !!
+<br>HAPPY CODING =)
+</p>
 <h2>Controlador de datos</h2>
 
 <p>
