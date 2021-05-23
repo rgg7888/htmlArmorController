@@ -135,7 +135,7 @@ class DataController {
         }else{
             for($i = 0; $i < count($result); $i++) {
                 if(is_array($result[$i])) {
-                    for($j = 0; $j < count($result[$i]); $j++) {
+                    for($j = 0; $j < count($result[$j]); $j++) {
                         array_push($values,$result[$i][$j]);
                     }
                 }else{
