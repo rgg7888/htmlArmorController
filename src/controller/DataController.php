@@ -165,6 +165,9 @@ class DataController {
                 array_push($invertido,$valores[$i-1]);
             }
         }
+        $aux = $invertido[1];
+        $invertido[1] = $invertido[2];
+        $invertido[2] = $aux;
         return $invertido;
     }
 
