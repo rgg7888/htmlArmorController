@@ -45,3 +45,10 @@ if(!function_exists('validar')) {
         return $helloWorld->validar($tipo,$name,$getMethod);
     }
 }
+
+if(!function_exists('comprobar')) {
+    function comprobar(string $result) {
+        $helloWorld = new App\validacion\forms\Valida;
+        return $helloWorld->comprobar($result);
+    }
+}
