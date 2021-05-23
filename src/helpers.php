@@ -52,3 +52,10 @@ if(!function_exists('conectar')) {
         return $helloWorld->getConn();
     }
 }
+
+if(!function_exists('select')) {
+    function select(string $campos,string $tabla,$conn) {
+        $helloWorld = new App\clad\crud\Clad;
+        return $helloWorld->select($campos,$tabla,$conn);
+    }
+}

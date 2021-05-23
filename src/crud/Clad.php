@@ -27,7 +27,13 @@ class Clad {
         $this->setConn($conn);
     }
 
-    public function __construct(array $data){
+    public function __construct(array $data = [
+        'machine' => '',
+        'user' => '',
+        'password' => '',
+        'dbname' => '',
+        'conexion' => null
+    ]){
 
         $this->data['machine'] = $data['machine'];
         $this->data['user'] = $data['user'];
