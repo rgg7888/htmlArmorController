@@ -22,7 +22,7 @@ if(!function_exists('validar_form')) {
     function validar_form(array $names, $buttonName = 'submit', $imprimir = false) {
         $objeto = new App\data\controller\DataController;
         if($objeto->submited($buttonName)) {
-            return $objeto->OrdenamientoEspecial($objeto->recorrerResult($objeto->vacio($names),$imprimir));
+            var_dunp( $objeto->OrdenamientoEspecial($objeto->recorrerResult($objeto->vacio($names),$imprimir)) );
         }
     }
 }

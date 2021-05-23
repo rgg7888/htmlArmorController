@@ -142,7 +142,7 @@ class DataController {
                     array_push($values,$result[$i]);
                 }
             }
-            var_dump($values);
+            return $values;
         }
     }
 
