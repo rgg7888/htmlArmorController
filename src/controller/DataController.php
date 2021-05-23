@@ -162,7 +162,7 @@ class DataController {
         $invertido = [];
         if(\strpos($valores[0],"required")) {
             for($i = count($valores); $i > 0; $i--){
-                array_push($invertido,$valores[$i]);
+                array_push($invertido,$valores[$i-1]);
             }
         }
         return $invertido;
