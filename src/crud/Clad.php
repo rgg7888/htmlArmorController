@@ -76,10 +76,7 @@ class Clad {
     }
 
     //crud operations
-    public function select(string $campos,string $tabla,$conn,array $ordenamiento = [
-        "orderBy" => "none",
-        "forma" => "ASC"
-    ]) {
+    public function select(string $campos,string $tabla,$conn,array $ordenamiento = []) {
         $objeto = new Valida;
         #primero valido que sea una lista de campos valida
         if($objeto->lista($campos)) {
@@ -87,9 +84,7 @@ class Clad {
             if($objeto->letrasOnlyNotSpaces($tabla)) {
                 #valido si el usuario quiere un ordenamiento 
                 $chunk = '';
-                $aux = $ordenamiento['orderBy'];
-                echo $aux;
-                if($aux !== "none") {
+                if(array_key_exists("orderBy",$ordenamiento)) {
                     $chunk = " ORDER BY ".$ordenamiento['orderBy']." ".$ordenamiento['forma'];
                     $sql = "SELECT $campos FROM $tabla".$chunk;
                     echo "entro al ordenamiento";
