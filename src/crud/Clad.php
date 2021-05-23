@@ -85,7 +85,7 @@ class Clad {
     }
 
     //crud operations
-    public function select(string $campos,string $tabla,$conn,$order = null) {
+    public function select(string $campos,string $tabla,$conn,$order = "") {
         $this->setOrden($order);
         $objeto = new Valida;
         #primero valido que sea una lista de campos valida
