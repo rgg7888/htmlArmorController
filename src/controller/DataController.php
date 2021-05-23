@@ -168,15 +168,15 @@ class DataController {
 
     public function OrdenamientoEspecial (array $valores) {
         $invertido = [];
-        if(\strpos($valores[0],"required")) {
+        if(filter_var($valores[2], FILTER_VALIDATE_EMAIL)) {
             $invertido = $this->itera($valores);
-        }else if(\strpos($valores[0],"not valid")){
-            $invertido = $this->itera($valores);
+            $aux = $invertido[1];
+            $invertido[1] = $invertido[2];
+            $invertido[2] = $aux;
+            return $invertido;
+        }else{
+            return $valores;
         }
-        $aux = $invertido[1];
-        $invertido[1] = $invertido[2];
-        $invertido[2] = $aux;
-        return $invertido;
     }
 
 }
