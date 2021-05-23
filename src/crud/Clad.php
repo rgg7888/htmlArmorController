@@ -90,10 +90,8 @@ class Clad {
                     $campo = $order['by'];
                     $forma = $order['forma'];
                     $sql = "SELECT $campos FROM $tabla ORDER BY $campo $forma";
-                    echo "entro al ordenamiento";
                 }else{
                     $sql = "SELECT $campos FROM $tabla";
-                    echo "no entro al ordenamiento";
                 }
                 $registros = \mysqli_query($conn,$sql);
                 $rows = \mysqli_fetch_all($registros,MYSQLI_ASSOC);
