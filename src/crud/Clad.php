@@ -32,7 +32,8 @@ class Clad {
         'user' => '',
         'password' => '',
         'dbname' => '',
-        'conexion' => null
+        'conexion' => null,
+        'order' => null
     ]){
 
         $this->data['machine'] = $data['machine'];
@@ -41,6 +42,14 @@ class Clad {
         $this->data['dbname'] = $data['dbname'];
         $this->connect();
 
+    }
+
+    public function setOrden(string $orderBy) {
+        $this->data['order'] = $orderBy;
+    }
+
+    public function getOrder() {
+        return $this->data['order'];
     }
 
     public function setHost(string $hostName) {
@@ -76,17 +85,16 @@ class Clad {
     }
 
     //crud operations
-    public function select(string $campos,string $tabla,$conn,array $ordenamiento = []) {
+    public function select(string $campos,string $tabla,$conn,$order = null) {
+        $this->setOrden($order);
         $objeto = new Valida;
         #primero valido que sea una lista de campos valida
         if($objeto->lista($campos)) {
             #valido que el nombre sea un string correcto
             if($objeto->letrasOnlyNotSpaces($tabla)) {
                 #valido si el usuario quiere un ordenamiento 
-                $chunk = '';
-                if(array_key_exists("orderBy",$ordenamiento)) {
-                    $chunk = " ORDER BY ".$ordenamiento['orderBy']." ".$ordenamiento['forma'];
-                    $sql = "SELECT $campos FROM $tabla".$chunk;
+                if($this->getOrder()) {
+                    $sql = "SELECT $campos FROM $tabla ORDER BY ".$this->getOrder();
                     echo "entro al ordenamiento";
                 }else{
                     $sql = "SELECT $campos FROM $tabla";
