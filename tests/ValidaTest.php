@@ -1,5 +1,5 @@
 <?php
-
+/*
 use PHPUnit\Framework\TestCase;
 use App\validacion\forms\Valida;
 
@@ -133,4 +133,4 @@ class ValidaTest extends TestCase {
 
     }
 
-}
+}*/
