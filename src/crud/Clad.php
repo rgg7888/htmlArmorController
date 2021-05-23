@@ -87,7 +87,9 @@ class Clad {
             if($objeto->letrasOnlyNotSpaces($tabla)) {
                 #valido si el usuario quiere un ordenamiento 
                 $chunk = '';
-                if($ordenamiento['orderBy'] !== "none") {
+                $aux = $ordenamiento['orderBy'];
+                echo $aux;
+                if($aux !== "none") {
                     $chunk = " ORDER BY ".$ordenamiento['orderBy']." ".$ordenamiento['forma'];
                     $sql = "SELECT $campos FROM $tabla".$chunk;
                     echo "entro al ordenamiento";
